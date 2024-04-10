@@ -1,0 +1,17 @@
+[default]
+path = "~/Pictures/Wallpapers/hypr/"
+apply-shadow = true
+duration = "30m"
+sorting = "random"
+
+[HDMI-A-1]
+path = "~/Pictures/Wallpapers/hypr/"
+apply-shadow = true
+sorting = "random"
+duration = "30m"
+
+[DP-3]
+path = "~/Pictures/Wallpapers/hypr/"
+sorting = "random"
+apply-shadow = true
+duration = "30m"
