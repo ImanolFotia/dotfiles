@@ -121,7 +121,7 @@ button:hover {
     color: #eeeeee;
     margin: 2px;
     opacity: 1.0;
-    border: solid;
+    border: none;
     border-radius: 5px;
     border-width: 2px;
     /*border: #ff0000;*/
@@ -205,6 +205,16 @@ label:focus {
 #cpu {
     margin: 2px;
     color: #2ecc71;
+    opacity: 1.0;
+    border: solid;
+    border-radius: 5px;
+    border-width: 2px;
+}
+
+#custom-lock {
+    font-size: 14px;
+    margin: 2px;
+    color: #9407e6;
     opacity: 1.0;
     border: solid;
     border-radius: 5px;
