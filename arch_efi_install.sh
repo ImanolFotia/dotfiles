@@ -12,13 +12,13 @@ echo solaire >> /etc/hostname
 mkinitcpio -P
 passwd
 useradd -m solaire
+passwd solaire
 
-pacman -S git neovim dhcpcd wayland plasma plasma-workspace plasma-wayland-protocols grub efibootmgr sddm sudo networkmanager os-prober kitty dophin
+pacman -S git neovim wayland plasma plasma-workspace plasma-wayland-protocols hyprland hyprlock xdg-desktop-portal-hyprland grub efibootmgr sddm sudo networkmanager os-prober kitty dolphin
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
-systemctl enable dhcpcd.service
 systemctl enable sddm
 systemctl enable NetworkManager.service
 
