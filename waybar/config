@@ -1,6 +1,5 @@
-[{
+{
     "layer": "top", // Waybar at top layer
-    "position": "top",
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 0, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
@@ -11,8 +10,7 @@
         "hyprland/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "wlr/taskbar",
-        "hyprland/window"
+        "wlr/taskbar"
     ],
     "modules-center": [
         "sway/window",
@@ -20,10 +18,6 @@
         "clock"
     ],
     "modules-right": [
-        "sway/language",
-        "privacy",
-        "mpd",
-        "custom/media",
         "tray",
         "custom/lock",
         "idle_inhibitor",
@@ -33,6 +27,10 @@
         "memory",
         //"temperature",
         "bluetooth",
+        "sway/language",
+        "privacy",
+        "battery",
+        "custom/power"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -107,9 +105,9 @@
         }
     },
     "tray": {
-        "icon-size": 21,
-        "show-passive-items": true,
-        "spacing": 10
+        // "icon-size": 21,
+        "spacing": 10,
+        "icon-size": 23
     },
     "clock": {
         "timezone": "America/Argentina/Buenos_Aires",
@@ -119,20 +117,10 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": true,
-        "states": {
-            "low": 0,
-            "mid": 25,
-            "high": 50
-        }
+        "tooltip": true
     },
     "memory": {
-        "format": "{}% ",
-        "on-click": "alacritty --title floating_term_alacritty -o font.size=10 --command btop",
-
-	"tooltip": true,
-	"tooltip-format": "RAM:\nUsed: {used} GiB\nAvailable: {avail} GiB\n\nSwap:\nUsed: {swapUsed} GiB\nAvailable: {swapAvail} GiB",
-
+        "format": "{}% "
     },
     "temperature": {
         "thermal-zone": 1,
@@ -192,7 +180,7 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -200,8 +188,9 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        //"format-good": "", // An empty format will hide the module
+        "format-full": "",
+        "interval": 1,
         "format-icons": [
             "",
             "",
@@ -215,10 +204,10 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        //"format-ethernet": "",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-wifi": "",
+        //"format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "",
+        "tooltip-format": "{essid} ({signalStrength}%) ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
@@ -241,32 +230,17 @@
             "default": [
                 "",
                 "",
-                " "
+                ""
             ]
         },
         "on-click": "pavucontrol"
     },
     "hyprland/workspaces": {
-        "format": "{icon}",
-        //"format-icons": {
-        //    "active": "",
-        //    "default": ""
-        //}
+        "format": "{name}: {icon}",
         "format-icons": {
-             "1": "Ⅰ",
-             "2": "Ⅱ",
-             "3": "Ⅲ",
-             "4": "Ⅳ",
-             "5": "Ⅴ",
-             "6": "Ⅵ",
-             "7": "Ⅶ",
-             "8": "Ⅷ",
-             "9": "Ⅸ",
-             "10": "Ⅹ",
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         }
+            "active": "",
+            "default": ""
+        }
     },
     "wlr/taskbar": {
         "format": "{icon}",
@@ -276,7 +250,7 @@
         "on-click": "activate",
         "on-click-middle": "close",
         "ignore-list": [
-            "Alacritty","Konsole", "Kitty"
+            "Alacritty"
         ],
         "app_ids-mapping": {
             "firefoxdeveloperedition": "firefox-developer-edition"
@@ -291,12 +265,11 @@
         "format": "    ",
         "on-click": "hyprlock"
     },
-    "hyprland/window": {
-    "format": "{initialTitle}",
-	"separate-outputs": true,
-	"icon": true,
-	"icon-size": 15
-    },
+
+    "custom/power": {
+        "format": "  ⏻  ",
+        "on-click": "/usr/libexec/ksmserver-logout-greeter --windowed"
+    }
     /*
     "custom/media": {
         "format": "{icon} {}",
@@ -310,64 +283,4 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }*/
-}/*,
-{
-    "output": "HDMI-A-1",
-    "layer": "top", // Waybar at top layer
-    "position": "bottom",
-    "reload_style_on_change": true,
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
-    "height": 0,
-    "mode": "dock",
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-
-    "margin": "0",
-    "padding": "0",
-    "modules-left": [
-    ],
-    "modules-center": [
-        "group/dock"
-    ],
-    "modules-right": [
-    ],
-
-    "group/dock": {
-		"orientation": "horizontal",
-        "modules": [
-            "custom/fedora",
-            "custom/code",
-            "custom/firefox",
-            "custom/terminal",
-            "custom/steam",
-            "custom/discord",
-        ],
-    },
-    "custom/firefox":{
-        "format": "",
-        "on-click": "firefox"
-    },
-    "custom/terminal": {
-        "format": "",
-        "on-click": "alacritty"
-    },
-    "custom/code": {
-        "format": " ",
-        "on-click": "/usr/share/codium/codium  --new-window --enable-features=UseOzonePlatform --ozone-platform=wayland"
-    },
-
-    "custom/fedora": {
-        "format": "󰣛",
-        "on-click": "rofi -combi-modi window,drun,filebrowser -show combi"
-    },
-
-    "custom/steam": {
-        "format": "",
-        "on-click": "steam"
-    },
-    "custom/discord": {
-        "format": "",
-        "on-click": "/home/solaire/.local/bin/Discord/Discord --enable-features=UseOzonePlatform --ozone-platform=wayland"
-    },
-}*/]
+}

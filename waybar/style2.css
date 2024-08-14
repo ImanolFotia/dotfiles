@@ -1,17 +1,12 @@
 * {
     font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
-    font-size: 12px;
-    padding: 2px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-
-    margin: 0px;
+    font-size: 13px;
 }
 
 window#waybar {
-    background-color: rgba(30, 32, 48, 0.0);
+    background-color: rgba(43, 48, 59, 0.0);
+    color: gray;
     transition-property: background-color;
-    color: #cad3f5;
     /*background-image: url('/usr/share/hyprland/wall1.png');*/
     transition-duration: .5s;
 
@@ -27,16 +22,16 @@ window#waybar.empty {
 }
 
 window#waybar.solo {
-    background-color: transparent;
+    background-color: #FFFFFF;
 }
 
 
 window#waybar.termite {
-    background-color: transparent;
+    background-color: #3F3F3F;
 }
 
 window#waybar.chromium {
-    background-color: transparent;
+    background-color: #000000;
     border: none;
 }
 
@@ -57,7 +52,7 @@ button:hover {
 #workspaces button {
     /*padding: 0 5px;*/
     background-color: transparent;
-    color: #cad3f5;
+    color: #eeeeee;
     border: none;
     border-radius: 0px;
 }
@@ -113,44 +108,43 @@ button:hover {
 }
 
 .modules-left {
-    background-color: rgba(30, 32, 48, 0.8);
-    margin: 0px;
+    background-color: rgba(43, 48, 59, 0.5);
+    margin-top: 10px;
     margin-bottom: 5px;
-    margin-left: 2px;
+    margin-left: 10px;
     border-color: gray;
     border: solid;
     border-radius: 30px;
     border-width: 0px;
-    box-shadow: 0px 0px 1px 1px #111111;
-    color: #cad3f5;
-    padding: 0px;
+    box-shadow: 0px 0px 3px white;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .modules-right {
-    margin: 0px;
-    background-color: rgba(30, 32, 48, 0.8);
+    background-color: rgba(43, 48, 59, 0.5);
+    margin-top: 10px;
     margin-bottom: 5px;
-    margin-right: 2px;
-    padding: 0px;
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-color: gray;
     border: solid;
     border-radius: 30px;
     border-width: 0px;
-    color: #cad3f5;
-    box-shadow: 0px 0px 1px 1px #111111;
+    box-shadow: 0px 0px 3px white;
 }
 
 .modules-center {
-    margin: 0px;
-    background-color: rgba(30, 32, 48, 0.8);
+    background-color: rgba(43, 48, 59, 0.5);
+    margin-top: 10px;
     margin-right: 10px;
     margin-bottom: 5px;
     border-color: gray;
-    color: #cad3f5;
     border: solid;
     border-radius: 30px;
     border-width: 0px;
-    box-shadow: 0px 0px 1px 1px #111111;
+    box-shadow: 0px 0px 3px white;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -165,7 +159,7 @@ button:hover {
 
 #clock {
     /*background-color: #64727d;*/
-    color: #cad3f5;
+    color: #eeeeee;
     margin: 2px;
     opacity: 1.0;
     border: none;
@@ -175,19 +169,12 @@ button:hover {
 }
 
 #taskbar {
+    color: white;
     margin: 2px;
-    color: #cad3f5;
     opacity: 1.0;
-    background-color: rgba(180, 180, 180, 1.0);
-    margin: 0px;
-    padding: 0px;
-    padding-right: 3px;
-    padding-left: 3px;
-    border: solid;
-    border-radius: 30px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-width: 0px;
+    border: none;
+    border-left: solid;
+    border-width: 3px;
 }
 
 #taskbar button:hover {
@@ -197,7 +184,7 @@ button:hover {
 
 #workspaces {
 
-    color: #cad3f5;
+    color: #eeeeee;
     margin: 2px;
     opacity: 1.0;
     /*border-radius: 5px;
@@ -206,14 +193,13 @@ button:hover {
 
 #battery {
     background-color: #ffffff;
-    color: #cad3f5;
+    color: #000000;
 }
 
 #bluetooth {
     margin: 2px;
-    /*color: #0472f0;*/
+    color: #0472f0;
     font-size: 16px;
-    color: #cad3f5;
     opacity: 1.0;
    /* border: solid;
     border-radius: 5px;
@@ -222,27 +208,18 @@ button:hover {
 
 #privacy {
 
-    margin: 0px;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin: 2px;
     color: #eeeeee;
     opacity: 1.0;
-    color: #cad3f5;
    /* border: solid;
     border-radius: 5px;
     border-width: 2px;*/
 }
 
-#battery {
-    background-color: #f5a97f;
-    color: #1e2030;
-}
-
-
 #battery.charging,
 #battery.plugged {
-    color: #24273a;
-    background-color: #a6da95;
+    color: #ffffff;
+    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -253,8 +230,8 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #ed8796;
-    color: #24273a;
+    background-color: #f53c3c;
+    color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -268,9 +245,8 @@ label:focus {
 
 #cpu {
     margin: 2px;
-    /*color: #2ecc71;*/
+    color: #2ecc71;
     opacity: 1.0;
-    color: #cad3f5;
     /*border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -279,9 +255,8 @@ label:focus {
 #custom-lock {
     font-size: 14px;
     margin: 2px;
-    /*color: #9407e6;*/
+    color: #9407e6;
     opacity: 1.0;
-    color: #cad3f5;
     /*border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -289,10 +264,8 @@ label:focus {
 
 #memory {
     margin: 2px;
-    /*color: #9b59b6;*/
-
+    color: #9b59b6;
     opacity: 1.0;
-    color: #cad3f5;
     /*border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -300,7 +273,7 @@ label:focus {
 
 #disk {
     margin: 2px;
-    /*color: #964B00;*/
+    color: #964B00;
     opacity: 1.0;
     /*border: solid;
     border-radius: 5px;
@@ -313,8 +286,7 @@ label:focus {
 
 #network {
     margin: 2px;
-   /* color: #2980b9;*/
-    color: #cad3f5;
+    color: #2980b9;
     opacity: 1.0;
     /*border: solid;
     border-radius: 5px;
@@ -322,10 +294,9 @@ label:focus {
 }
 
 #network.disconnected {
-   /* color: #f53c3c;*/
+    color: #f53c3c;
     margin: 2px;
     opacity: 1.0;
-    color: #cad3f5;
     /*border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -333,9 +304,8 @@ label:focus {
 
 #pulseaudio {
     margin: 2px;
-    /*color: #f1c40f;*/
+    color: #f1c40f;
     opacity: 1.0;
-    color: #cad3f5;
     /*border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -344,7 +314,7 @@ label:focus {
 #pulseaudio.muted {
     margin: 2px;
     background-color: #90b1b1;
-    /*color: #2a5c45;*/
+    color: #2a5c45;
 
     opacity: 1.0;
     /*border: solid;
@@ -370,7 +340,6 @@ label:focus {
     background-color: #66cc99;
     color: #2a5c45;
     min-width: 100px;
-    color: #cad3f5;
 }
 
 #custom-media.custom-spotify {
@@ -385,7 +354,6 @@ label:focus {
     color: #f0932b;
     margin: 2px;
     opacity: 1.0;
-    color: #cad3f5;
    /* border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -399,7 +367,6 @@ label:focus {
     color: #2980b9;
     margin: 2px;
     opacity: 1.0;
-    color: #cad3f5;
     /*border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -415,9 +382,8 @@ label:focus {
 }
 
 #idle_inhibitor {
-    /*color: #2d3436;*/
+    color: #2d3436;
     margin: 2px;
-    color: #cad3f5;
     opacity: 1.0;
     /*border: solid;
     border-radius: 5px;
@@ -429,7 +395,6 @@ label:focus {
     /*color: #2d3436;*/
     margin: 2px;
     opacity: 1.0;
-    color: #cad3f5;
    /* border: solid;
     border-radius: 5px;
     border-width: 2px;*/
@@ -483,76 +448,3 @@ label:focus {
 #scratchpad.empty {
     background-color: transparent;
 }
-
-#window {
-color: white;
-    color: #cad3f5;
-margin: 0px;
-padding: 0px;
-padding-right: 3px;
-padding-left: 3px;
-margin-right: 3px;
-border: solid;
-border-radius: 30px;
-border-width: 0px;
-}
-
-#group-dock {
-    margin: 0px;
-    padding: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-#custom-firefox{
-
-font-size: 20px;
-margin-right: 5px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 0px;
-}
-
-#custom-terminal{
-
-font-size: 15px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 0px;
-}
-
-#custom-steam{
-
-font-size: 20px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 0px;
-}
-
-
-#custom-discord{
-
-font-size: 20px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 0px;
-}
-
-
-#custom-code {
-
-font-size: 18px;
-margin: 0px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 0px;
-}
-
-#custom-fedora {
-
-padding-left: 5px;
-padding-right: 5px;
-font-size: 25px;
-margin: 0px;
-}
-
