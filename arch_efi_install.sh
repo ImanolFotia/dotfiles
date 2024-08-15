@@ -14,7 +14,7 @@ passwd
 useradd -m solaire
 passwd solaire
 
-pacman -S git neovim dhcpcd wayland plasma plasma-workspace plasma-wayland-protocols xdg-desktop-portal-kde grub efibootmgr sddm sudo networkmanager os-prober kitty dolphin nvidia nvidia-utils nvidia-settings opencl-nvidia xorg-server-devel
+pacman -S git neovim dhcpcd wayland plasma plasma-workspace plasma-wayland-protocols xdg-desktop-portal-kde hyprland hyprlock xdg-desktop-portal-hyprland grub efibootmgr sddm sudo networkmanager os-prober kitty dolphin nvidia nvidia-utils nvidia-settings opencl-nvidia xorg-server-devel
 
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
