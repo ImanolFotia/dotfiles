@@ -1,15 +1,15 @@
 * {
-    font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-family: 'NotoSans Nerd Font', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 12px;
     padding: 2px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 
     margin: 0px;
 }
 
 window#waybar {
-    background-color: rgba(30, 32, 48, 0.0);
+    background-color: rgba(30, 32, 48, 0.5);
     transition-property: background-color;
     color: #cad3f5;
     /*background-image: url('/usr/share/hyprland/wall1.png');*/
@@ -46,38 +46,57 @@ button {
     /* Avoid rounded borders under each button name */
     /*border: none;
     border-radius: 0;*/
+    font-size: 40px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
+    font-size: 40px;
     /*box-shadow: inset 0 -3px #ffffff;*/
 }
 
+
+
 #workspaces button {
     /*padding: 0 5px;*/
+
     background-color: transparent;
+    margin: 0px;
     color: #cad3f5;
     border: none;
     border-radius: 0px;
+    font-size: 20px;
+}
+
+#hyprland-workspaces {
+    
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    font-size: 20px;
 }
 
 #workspaces button.focused {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
+    font-size: 20px;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+    font-size: 20px;
 }
 
 #mode {
     background-color: #64727D;
     border-bottom: 3px solid #ffffff;
+}
+
+#custom-power {
+    font-size: 15px;
+    margin-right: 10px;
 }
 
 .info {
@@ -110,12 +129,14 @@ button:hover {
 #window,
 #workspaces {
     margin: 0 4px;
+    font-size: 20px;
 }
 
 .modules-left {
     background-color: rgba(30, 32, 48, 0.8);
     margin: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    margin-top: 6px;
     margin-left: 2px;
     border-color: gray;
     border: solid;
@@ -129,7 +150,8 @@ button:hover {
 .modules-right {
     margin: 0px;
     background-color: rgba(30, 32, 48, 0.8);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    margin-top: 6px;
     margin-right: 2px;
     padding: 0px;
     border-color: gray;
@@ -144,7 +166,8 @@ button:hover {
     margin: 0px;
     background-color: rgba(30, 32, 48, 0.8);
     margin-right: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    margin-top: 6px;
     border-color: gray;
     color: #cad3f5;
     border: solid;
@@ -200,8 +223,7 @@ button:hover {
     color: #cad3f5;
     margin: 2px;
     opacity: 1.0;
-    /*border-radius: 5px;
-    border-width: 1px;*/
+    font-size: 20px;
 }
 
 #battery {
